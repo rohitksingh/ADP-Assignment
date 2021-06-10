@@ -25,5 +25,16 @@ function onDeviceReady() {
     // Cordova is now initialized. Have fun!
 
     console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
+
+    window.plugins.adpAssignmentPlugin.show(2, 3, function() {
+        console.log('Excelsior!');
+      }, function(err) {
+        console.log('Uh oh... ' + err);
+      });
+
+
     document.getElementById('deviceready').classList.add('ready');
+
+
+
 }
