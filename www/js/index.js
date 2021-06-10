@@ -26,15 +26,23 @@ function onDeviceReady() {
 
     console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
 
-    window.plugins.adpAssignmentPlugin.show(2, 3, function() {
-        console.log('Excelsior!');
-      }, function(err) {
-        console.log('Uh oh... ' + err);
-      });
+    // window.plugins.adpAssignmentPlugin.show(2, 3, function() {
+    //     console.log('Excelsior!');
+    //   }, function(err) {
+    //     console.log('Uh oh... ' + err);
+    //   });
 
+    var success = function(message) {
+        alert(message);
+    }
+
+    var failure = function() {
+        alert("Error calling Adp Assignment Plugin");
+    }
+
+    window.plugins.adpAssignmentPlugin.calculate(2, success, failure);
 
     document.getElementById('deviceready').classList.add('ready');
-
 
 
 }
